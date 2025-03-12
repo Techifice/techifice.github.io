@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Techifice: Award-winning web design, apps, and digital solutions to grow your business fast.">
+    <meta name="keywords" content="web design agency, app development, tech startups, custom websites, digital solutions">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Techifice - Turn Your Vision into Reality">
+    <meta property="og:description" content="Award-winning web design, apps, and digital solutions to grow your business fast.">
+    <meta property="og:url" content="https://techifice.com">
+    <meta property="og:type" content="website">
+    
+    <title>Techifice - Turn Your Vision into Reality</title>
+    <link rel="icon" href="favicon.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=DM+Sans:wght@400;500&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=DM+Sans:wght@400;500&display=swap">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Replace with your actual GA measurement ID
+    </script>
+    
+    <style>
+        :root {
+            --primary-dark: #12013a;
+            --primary-medium: #490364;
+            --accent-blue: #00d9ff;
+            --accent-pink: #ef18ae;
+            --text-light: #ffffff;
+            --text-dark: #12013a;
+            --transition-speed: 0.3s;
+            --border-radius: 12px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(to right, var(--primary-dark) 0%, var(--primary-medium) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Changed to space-between to push footer down */
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+        
+        main {
+            max-width: 800px;
+            margin: 80px auto 40px; /* Reduced bottom margin */
+            width: 100%;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: clamp(4rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.2em;
+        }
+        
+        .tagline {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight {
+            color: var(--accent-blue);
+        }
+        
+        /* Improved dynamic headline animation */
+        .dynamic-headline {
+            display: inline-block;
+            position: relative;
+            height: 1.2em;
+            width: auto;
+            min-width: 150px; /* Increased minimum width */
+            overflow: hidden;
+            vertical-align: bottom;
+            text-align: center; /* Center the text */
+        }
+        
+        .headline-text {
+            display: block;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            color: var(--accent-blue);
+
+        }
+        
+        .headline-text.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Testimonial marquee */
+        .testimonial-section {
+            margin: 30px 0;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .testimonial-track {
+            display: flex;
+            animation: marquee 40s linear infinite;
+            white-space: nowrap;
+            width: fit-content;
+        }
+        
+        .testimonial-track:hover {
+            animation-play-state: paused;
+        }
+        
+        .testimonial-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 30px;
+        }
+        
+        .testimonial-item i {
+            color: var(--accent-blue);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px; /* Added bottom margin */
+        }
+        
+        /* Modified for 3 larger service cards */
+        .cta-card {
+            background: var(--text-light);
+            color: var(--text-dark);
+            padding: 20px 24px; /* Increased padding */
+            font-weight: 500;
+            border-radius: var(--border-radius);
+            transition: transform var(--transition-speed), 
+                        background var(--transition-speed),
+                        box-shadow var(--transition-speed);
+            width: calc(33.33% - 14px); /* Adjusted for 3 cards */
+            min-width: 200px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 2.1rem;
+            font-weight: 700;
+            /* text-transform: uppercase; */
+            text-decoration: none;
+            display: block;
+            height: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-card:hover {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
+            color: var(--text-dark);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+        
+        .cta-card i {
+            margin-bottom: 12px; /* Increased margin */
+            font-size: 1.8rem; /* Increased size */
+            display: block;
+        }
+        
+        .cta-card:active {
+            transform: translateY(0);
+        }
+        
+        /* New text-based CTA */
+        .text-cta {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        
+        .text-cta a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color var(--transition-speed);
+            font-weight: 500;
+        }
+        
+        .text-cta a:hover {
+            color: var(--accent-pink);
+        }
+        
+        .text-cta i {
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-pink) 100%);
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: auto; /* Push to bottom */
+            position: relative; /* Ensure it doesn't overlap */
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .copyright {
+            text-align: left;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .social-icons {
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            text-align: right;
+            min-width: 200px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform var(--transition-speed);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Loading animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .loader-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader-circle {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-top: 5px solid var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .cta-card {
+                width: calc(50% - 10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .copyright, .social-icons, .contact-info {
+                text-align: center;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .logo {
+                width: 100px;
+            }
+            
+            main {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .cta-card {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            body {
+                padding-bottom: 0; /* Remove extra padding */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <header>
+        <img src="logo.svg" alt="Techifice Logo" class="logo" loading="lazy">
+    </header>
+    
+    <main>
+        
+        <h1>
+            Turn Your 
+            <div class="dynamic-headline">
+                <span class="headline-text active">Ideas</span>
+                <span class="headline-text">Vision</span>
+                <!-- <span class="headline-text" style="padding-right: 19px;">business</span> -->
+                <span class="headline-text">Brand</span>
+                <span class="headline-text">Dreams</span>
+            </div>
+            into <span class="highlight">Reality!</span>
+        </h1>
+        <p class="tagline">Real Results, No Fluff—Let's Build It Now.</p>
+    
+        <div class="testimonial-section">
+            <div class="testimonial-track">
+                <div class="testimonial-item"><i class="fas fa-star"></i> 50+ Clients, 100+ Projects, Zero Regrets</div>
+                <div class="testimonial-item"><i class="fas fa-check-circle"></i> 100% Satisfaction Guaranteed</div>
+                <div class="testimonial-item"><i class="fas fa-bolt"></i> Fast Turnaround Times</div>
+                <div class="testimonial-item"><i class="fas fa-code"></i> Expert Developers and Designers</div>
+                <div class="testimonial-item"><i class="fas fa-thumbs-up"></i> "Grew Our Revenue 300% in 6 Months!" - George Collins, DigitalCorp</div>
+                <div class="testimonial-item"><i class="fas fa-award"></i> Award-Winning Design Solutions</div>
+                <div class="testimonial-item"><i class="fas fa-star"></i> 50+ Clients, 100+ Projects, Zero Regrets</div>
+                <div class="testimonial-item"><i class="fas fa-check-circle"></i> 100% Satisfaction Guaranteed</div>
+                <div class="testimonial-item"><i class="fas fa-bolt"></i> Fast Turnaround Times</div>
+                <div class="testimonial-item"><i class="fas fa-code"></i> Expert Developers and Designers</div>
+                <div class="testimonial-item"><i class="fas fa-thumbs-up"></i> "Grew Our Revenue 300% in 6 Months!" - George Collins, DigitalCorp</div>
+                <div class="testimonial-item"><i class="fas fa-award"></i> Award-Winning Digital Agency</div>
+            </div>
+        </div>
+        <h2 class="tagline">WHAT DO YOU WANT TODAY?</h2>     
+        
+        <!-- Three main service cards instead of four -->
+        <div class="cta-container">
+            <a class="cta-card" href="https://wa.me/+2348160919338?text=I%20want%20a%20website%20or%20app" tabindex="0">
+                <i class="fas fa-laptop-code"></i> Launch My Website/App That Wins
+            </a>
+            <a class="cta-card" href="https://wa.me/+2348160919338?text=I%20want%20branding%20and%20marketing%20services" tabindex="0">
+                <i class="fas fa-bullhorn"></i> Sell Faster with Marketing Strategies
+            </a>
+            <a class="cta-card" href="https://wa.me/+2348160919338?text=I%20want%20UI/UX%20design" tabindex="0">
+                <i class="fas fa-paint-brush"></i> Stand Out with Branding & Designs
+            </a>
+        </div> 
+        
+        <!-- Added text CTA instead of fourth card -->
+        <div class="text-cta">
+            <a href="https://wa.me/+2348160919338?text=I%20want%20to%20talk%20with%20you" tabindex="0">
+                <i class="fas fa-comments"></i> Not mentioned? Let's talk about your specific needs
+            </a>
+        </div>
+
+           <!-- Testimonial/Credibility Marquee -->
+        
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                © 2024-2025 Techifice. All rights reserved.<br>
+                <small>Ready to Grow? Your Next Step Starts with Us.</small>
+            </div>
+            <nav class="social-icons" aria-label="Social Media Links">
+                <a href="https://www.facebook.com/profile.php?id=100094868222193" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/techifice" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/techifice/" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </nav>
+            <div class="contact-info">
+                <a href="https://wa.me/+2348160919338" style="color: white; text-decoration: none;">
+                    <i class="fab fa-whatsapp"></i> +234 816 0919 338
+                </a> | 
+                <a href="/cdn-cgi/l/email-protection#3b5a5f5652557b4f5e5853525d52585e15585456" style="color: white; text-decoration: none;">
+                    <i class="far fa-envelope"></i>
+                     <!-- <span class="__cf_email__" data-cfemail="a7c6c3cacec9e7d3c2c4cfcec1cec4c289c4c8ca">[email protected]-->
+                        admin@techifice.com
+                     </span> 
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // Page loader
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.page-loader');
+            loader.classList.add('loader-hidden');
+        });
+        
+        // Dynamic headline rotation
+        const headlines = document.querySelectorAll('.headline-text');
+        let currentHeadline = 0;
+        
+        function rotateHeadlines() {
+            headlines.forEach(headline => headline.classList.remove('active'));
+            currentHeadline = (currentHeadline + 1) % headlines.length;
+            headlines[currentHeadline].classList.add('active');
+        }
+        
+        headlines[0].classList.add('active');
+        setInterval(rotateHeadlines, 3000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Google Analytics CTA tracking
+        document.querySelectorAll('.cta-card, .text-cta a').forEach(item => {
+            item.addEventListener('click', () => {
+                gtag('event', 'cta_click', { 'cta_name': item.textContent.trim() });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91f529c85a788218',t:'MTc0MTgwMjEzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
