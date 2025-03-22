@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techifice x G.R.O.W. Conference 2025</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(135deg, #240046, #3f37c9, #f72585);
+      color: #fff;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .hero {
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+    .btn-custom {
+      background-color: #f72585;
+      border: none;
+    }
+    .btn-custom:hover {
+      background-color: #d61c74;
+    }
+    .event-info ul li {
+      margin-bottom: 0.5rem;
+    }
+    .count-box {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero container">
+    <h1>Techifice Partners with G.R.O.W. 2025</h1>
+    <p class="lead">We’re bridging the gap for 20 passionate creators to attend at 50% off.</p>
+    <div class="count-box">
+      <span id="countdown">20</span> slots remaining
+    </div>
+    <a href="#interest" class="btn btn-custom mt-4">Claim Your Slot</a>
+  </section>
+
+  <!-- Event Info Section -->
+  <section class="event-info py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>About the G.R.O.W. Conference</h2>
+          <p><strong>Theme:</strong> "What Am I Building?"<br>
+             <strong>Organizer:</strong> Lucky Elohor O. (Digital Creator Chic)</p>
+          <p><strong>Virtual Dates:</strong> June 24 & 25, 2025<br>
+             <strong>Live Event:</strong> June 28, 2025 in Lagos, Nigeria</p>
+          <ul>
+            <li>💡 Day 1: Inspiration & Strategy</li>
+            <li>🚀 Day 2: Growth & Expansion</li>
+            <li>🌟 Day 3: Innovation & Legacy (Live)</li>
+          </ul>
+          <p>Techifice is proudly sponsoring access for 20 creators with a 50% discount — let's help you build your legacy.</p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="grow-flyer.jpg" alt="GROW Conference 2025 Flyer" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interest Form Section -->
+  <section id="interest" class="py-5 bg-dark">
+    <div class="container">
+      <h2 class="text-center mb-4">Register Your Interest</h2>
+      <form id="interestForm" class="row g-3 justify-content-center">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-custom">Submit & Get Payment Link</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    let count = 20;
+    const form = document.getElementById("interestForm");
+    const countDisplay = document.getElementById("countdown");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      if (count > 0) {
+        count--;
+        countDisplay.textContent = count;
+        // You can replace this with redirect or mail integration
+        alert("Thanks for registering! You'll now be redirected to the payment link.");
+        window.location.href = "https://your-private-payment-link.com";
+      } else {
+        alert("Sorry, all 20 slots have been claimed!");
+      }
+    });
+  </script>
+</body>
+</html>

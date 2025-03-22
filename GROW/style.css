@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: linear-gradient(135deg,rgb(70, 11, 45), #4a1e8c);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+/* .hero {
+    padding: 100px 0;
+    text-align: center;
+} */
+
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    background: radial-gradient(
+        circle at 0% 0%,
+        rgba(99, 10, 140, 0.10),
+        rgba(7, 3, 67, 0.095),
+        rgba(213, 0, 96, 0.095)), 
+        url('https://thegrowconference.co/wp-content/uploads/2024/11/IMG_5303-scaled-1.jpg') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5; /* Adjust for visibility under gradient */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    background: radial-gradient(
+        circle at 0% 0%,
+        rgba(99, 10, 140, 0.6),
+        rgba(7, 3, 67, 0.6),
+        rgba(213, 0, 96, 0.6)
+    );
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.hero-image {
+    width: 100%;  /* Ensure the image spans the full width */
+    height: auto;
+    max-height: 400px; /* Optional: Limit image height for visual appeal */
+    object-fit: cover;
+    margin-bottom: 30px; /* Add space between the image and the container */
+}
+
+.hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideUp 1s ease-out;
+    line-height: 1.2;
+    font-weight: bolder;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    animation: slideUp 1s ease-out 0.3s forwards;
+}
+
+.cta-container {
+    display: inline-block;
+    text-align: center;
+    /* margin-top: 30px; Add spacing above the CTA container */
+}
+
+.cta-container img {
+    display: block;
+    margin: 0 auto 20px auto; /* Centers the image horizontally and adds space below */
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ff2d95;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: slideUp 1s ease-out 0.6s forwards;
+    opacity: 0; /* Start hidden for animation */
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 45, 149, 0.4);
+}
+
+/* Event Info Section */
+.event-info {
+    padding: 60px 0;
+}
+
+.event-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.event-info-content {
+    text-align: left;
+}
+
+.event-info h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.event-info p {
+    margin-bottom: 30px;
+}
+
+.event-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.event-info li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.event-info-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.event-info-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.event-info-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Ticket Counter Section */
+.ticket-counter {
+    padding: 30px 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin: 0 20px;
+}
+
+.ticket-counter p {
+    font-size: 1.5rem;
+}
+
+.dot {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+/* Registration Form Section */
+.register {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.register h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #fff; /* Ensuring title is visible */
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Custom focus style */
+input:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 10px rgba(255, 45, 149, 0.7); /* Add a glow effect */
+    border: 1px solid #ff2d95; /* Subtle border color to enhance focus */
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit Button */
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ff2d95;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; /* Add pointer cursor on hover */
+    animation: slideUp 1s ease-out 0.6s forwards;
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+    box-shadow: 0 4px 10px rgba(255, 45, 149, 0.3); /* Glowing effect */
+}
+
+.confirmation {
+    margin-top: 20px;
+    color: #fff; /* Make confirmation text white */
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Footer */
+footer {
+    padding: 30px 0;
+    background: radial-gradient(
+        circle at 0% 0%, 
+        rgba(99, 10, 140, 0.8), 
+        rgba(7, 3, 67, 0.8), 
+        rgba(213, 0, 96, 0.8)
+    );
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    color: #fff;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* For responsiveness */
+}
+
+footer .footer-left, footer .footer-center, footer .footer-right {
+    flex: 1;
+    margin: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .footer-left, footer .footer-center {
+    text-align: left;
+}
+
+footer .footer-right {
+    text-align: right;
+}
+
+.social-icon {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ff2d95; /* Glow effect on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .event-info-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .event-info-content {
+        text-align: center;
+    }
+    
+    .event-info ul {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.event-info, .ticket-counter, .register {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Header Section */
+header {
+    background: radial-gradient(
+        circle at 0% 0%,
+        rgba(99, 10, 140, 1),
+        rgba(7, 3, 67, 1),
+        rgba(213, 0, 96, 1));
+    color: white;
+    padding: 20px 0; /* Adjust the padding */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and title (if any) */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    height: 20px; /* Adjust logo height for better balance */
+    width: auto;
+    margin-right: 20px; /* Add space between logo and potential title */
+}
+
+.brand-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.8rem; /* Adjust for better balance */
+    margin: 0;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack the logo and title vertically on small screens */
+        align-items: center;
+    }
+
+    .logo {
+        height: 30px; /* Reduce logo size on small screens */
+        margin-bottom: 10px; /* Space between logo and title */
+    }
+
+    .brand-title {
+        font-size: 1.5rem; /* Adjust title size on small screens */
+    }
+}
