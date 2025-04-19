@@ -7,6 +7,13 @@
     --text-dark: #12013a;
     --transition-speed: 0.3s;
     --border-radius: 12px;
+    --t-gradient-primary-1: radial-gradient(
+        circle at 0% 0%,
+        rgba(99, 10, 140, 1),
+        rgba(7, 3, 67, 1),
+        rgba(213, 0, 96, .8));
+    --t-gradient-primary-2: linear-gradient(to right, var(--primary-dark) 0%, var(--primary-medium) 100%);
+    --t-gradient-secondary: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
 }
 
 * {
@@ -17,7 +24,7 @@
 
 body {
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(to right, var(--primary-dark) 0%, var(--primary-medium) 100%);
+    background: var(--t-gradient-primary-1);
     color: var(--text-light);
     min-height: 100vh;
     display: flex;
